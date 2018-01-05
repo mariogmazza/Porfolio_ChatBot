@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			["I am 1 day old"],
 			["I am just a bot", "I am a bot. What are you?"],
 			["Kani Veri", "My God"],
-			["I am nameless", "I don't have a name"],
+			["I am Jeanny Mario's personal assistant"],//, "I don't have a name"],
 			["I love you too", "Me too"],
 			["Have you ever felt bad?", "Glad to hear it"],
 			["Why?", "Why? You shouldn't!", "Try watching TV"],
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				}
 			}
 			document.getElementById("chatbot").innerHTML = product;
-			speak(product);
+		//	speak(product); THIS IS TEMP COMMENT
 			document.getElementById("input").value = ""; //clear input value
 		}
 
@@ -75,26 +75,62 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		function alternative(input) {
 
-			const possibleQuest = ["what", "where", "who", "when", "why", "how"];
-			const UserPronouns = ["i", "mine", "me", "my"];
-			const AI_Pronouns = ["you", "your"];
+			const possibleQuest = ["what", "where", "who", "when", "why", "how","can", "could","do","does"];
+            const UserPronouns = ["i", "mine", "me", "my"];
+            const needs= ["need","want","get","fetch","serve","give","have","has"];
+            let   listOfThing=["resume","picture","pics","pictures","pic","job","jobs","skills"];
+            const AI_IDs = ["you", "your","mario","mazza"];
+            
+            let fullArr=[];
 
-            let splitQuetion = input.split(",");
-            console.log(splitQuetion);
+            let splitQuetion = input.split(" ");
 
-			let TypeQuest = isItThere(splitQuetion, possibleQuest);
-			if (TypeQuest === -1) {
-                return "I don't know that one, sorry! ";
-                
-			} else {
+            let check = isItThere(splitQuetion, possibleQuest);
+			if (check !== -1) {
+                fullArr.push(check.word);
+            }else{
+                fullArr.push("none");
+            }
 
-                let UserQuest = isItThere(splitQuetion, UserPronouns);
-                
-				return UserQuest;
-			}
+             check = isItThere(splitQuetion, UserPronouns);
+             if(check !== -1){
+                    fullArr.push(check.word);
+            }else{
+                fullArr.push("none");
+            }
 
+            check=isItThere(splitQuetion,needs);
+            if(check !== -1){
+                fullArr.push(check.word);
+            }else{
+            fullArr.push("none");
+            }
+
+            check=isItThere(splitQuetion,AI_IDs);
+            if(check !== -1){
+                fullArr.push(check.word);
+            }else{
+              fullArr.push("none");
+            }
+           return analysisArr(fullArr);
 		}
 
+        function analysisArr(inputArr){
+            if(inputArr[0]!=="none"){ // check if it is a basic question??
+                if(inputArr[1]!=="none"){ // check if user is refering to themselve
+                    if(inputArr[1].position !== 1){
+                        
+                    }
+                }
+
+
+
+
+            }else{
+                return "pepe";
+            }
+
+        }
 
 
 		function isItThere(userQuestArr, storedQuest) {
@@ -107,7 +143,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 					if (tempWord == userQuestArr[j]) {
 
-						return tempWord;
+                        return {word:tempWord,
+                                position:j};
 					}
 				}
 			}
