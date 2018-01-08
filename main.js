@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ["bad", "bored", "tired"],
         ["help me", "tell me story", "tell me joke"],
         ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
-        ["bye", "good bye", "goodbye", "see you later"]
+        ["bye", "good bye", "goodbye", "see you later", "later"],
+        ["you suck", "you stupid", "you're stupid", "stupid machine", "you dumb", "you're dumb"]
     ];
     var reply = [
         ["Hi, How may I help you?", "Hey there! what can I do for you?", "Hello, How can I help you?"],
@@ -23,14 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
         ["Nothing much", "About to go to sleep", "Can you guest?", "I don't know actually"],
         ["I am 1 day old"],
         ["I am just a bot", "I am a bot. What are you?"],
-        ["Kani Veri", "My God"],
-        ["I am Jeanny Mario's personal assistant"], //, "I don't have a name"],
+        ["Mario Mazza", "The Creator"],
+        ["I am Jenny Mario's personal assistant"], //, "I don't have a name"],
         ["I love you too", "Me too"],
         ["Have you ever felt bad?", "Glad to hear it"],
         ["Why?", "Why? You shouldn't!", "Try watching TV"],
         ["I will", "What about?"],
         ["Tell me a story", "Tell me a joke", "Tell me about yourself", "You are welcome"],
-        ["Bye", "Goodbye", "See you later"]
+        ["Bye", "Goodbye", "See you later", "See you later alligator"],
+        ["What do you need meatbag!!", "To Error is human, I never error!"]
     ];
 
     document.querySelector("#input").addEventListener("keypress", function (e) {
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         document.getElementById("chatbot").innerHTML = product;
-        	speak(product); //THIS IS TEMP COMMENT
+        speak(product); //THIS IS TEMP COMMENT
         document.getElementById("input").value = ""; //clear input value
     }
 
@@ -84,45 +86,62 @@ document.addEventListener('DOMContentLoaded', function () {
         let fullArr = [];
         let splitQuetion = input.split(" ");
         let count = 0;
-        let myObj={};
-        while (count !== splitQuetion.length ) {
-            if(isItThere(splitQuetion[count])!==-1){
-            myObj[splitQuetion[count]]= input.indexOf(splitQuetion[count])
+        let myObj = {};
+        while (count !== splitQuetion.length) {
+            if (isItThere(splitQuetion[count]) !== -1) {
+
+                myObj[splitQuetion[count]] = input.indexOf(splitQuetion[count]);
+                fullArr.push(isItThere(splitQuetion[count]));
+
             }
-           count++;
+            count++;
         }
+        console.log(myObj);
+        console.log(fullArr);
 
-
-       console.log(Object.entries(myObj));
-        return Object.entries(myObj);
+        return analysisArr(fullArr);
     }
 
-
-
+    var questStarter = "Q", //Questions
+        userRef = "U", //User
+        need = "N", //Needs
+        listOfThing = "O", //Objects
+        AI_IDs = "A"; //Computer identifier 
 
     function analysisArr(inputArr) {
-        console.log("hey");
+        if (inputArr[0] == "Q") { // The string input is " very likely" a question 
+           return "it is question!"
+        }else{
+            return "I have no idea what you talking about!"
+        }
     }
-
-    // questStarter
-    // userRef
-    // need
-    // listOfThing
-    // AI_IDs
 
     function isItThere(thaWord) {
         const QuestionConstruct = [
-            ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does"],
-            ["i", "mine", "me", "my"],
-            ["need", "want", "get", "fetch", "serve", "give", "have", "has"],
-            ["resume", "picture", "pics", "pictures", "pic", "job", "jobs", "skills"],
-            ["you", "your", "mario", "mazza", "jeanny"]
+            ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does", "would"],
+            ["i", "mine", "me", "my", "they", "we", "she", "he", "them"],
+            ["need", "want", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide"],
+            ["resume", "about", "experience", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact", "info", "schooling", "education", "school", "degree", "degrees"],
+            ["you", "your", "mario", "mazza", "jeanny", "him", "his", "he"]
         ];
 
         for (let x = 0; x < QuestionConstruct.length; x++) {
             for (let y = 0; y < QuestionConstruct[x].length; y++) {
                 if (QuestionConstruct[x][y] == thaWord) {
-                  return  x;
+                    switch (x) {
+                        case 0:
+                            return "Q";
+                        case 1:
+                            return "U";
+                        case 2:
+                            return "N";
+                        case 3:
+                            return "O";
+                        case 4:
+                            return "A"
+                        default:
+                            break;
+                    }
                 }
             }
         }
