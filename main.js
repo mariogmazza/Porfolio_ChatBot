@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // your code goes here
-
 
     var trigger = [
         ["hi", "hey", "hello", "aloha", "yo", "sup", "sup bro", "hey there"],
@@ -18,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ["bye", "good bye", "goodbye", "see you later", "later"],
         ["you suck", "you stupid", "you're stupid", "stupid machine", "you dumb", "you're dumb"]
     ];
+
+
     var reply = [
         ["Hi, How may I help you?", "Hey there! what can I do for you?", "Hello, How can I help you?"],
         ["Fine", "Pretty well", "Fantastic"],
@@ -35,9 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
         ["What do you need meatbag!!", "To Error is human, I never error!"]
     ];
 
+    
     document.querySelector("#input").addEventListener("keypress", function (e) {
         var key = e.which || e.keyCode;
-        if (key === 13) { //Enter button
+        if (key === 13) { //Enter button is pressed
             var input = document.getElementById("input").value;
             document.getElementById("user").innerHTML = input;
             output(input);
@@ -76,53 +77,63 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function alternative(input) {
-
-        // const possibleQuest = ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does"];
-        // const UserPronouns = ["i", "mine", "me", "my"];
-        // const needs = ["need", "want", "get", "fetch", "serve", "give", "have", "has"];
-        // let listOfThing = ["resume", "picture", "pics", "pictures", "pic", "job", "jobs", "skills"];
-        // const AI_IDs = ["you", "your", "mario", "mazza", "jeanny"];
-
         let fullArr = [];
         let splitQuetion = input.split(" ");
         let count = 0;
         let myObj = {};
         while (count !== splitQuetion.length) {
             if (isItThere(splitQuetion[count]) !== -1) {
-
-                myObj[splitQuetion[count]] = input.indexOf(splitQuetion[count]);
+                myObj[splitQuetion[count]] = isItThere(splitQuetion[count]) // input.indexOf(splitQuetion[count]);
                 fullArr.push(isItThere(splitQuetion[count]));
-
             }
             count++;
         }
         console.log(myObj);
-        console.log(fullArr);
+        //console.log(fullArr);
 
-        return analysisArr(fullArr);
+        return analysisArr(myObj);
     }
 
-    var questStarter = "Q", //Questions
-        userRef = "U", //User
-        need = "N", //Needs
-        listOfThing = "O", //Objects
-        AI_IDs = "A"; //Computer identifier 
-
-    function analysisArr(inputArr) {
+    function analysisArr(theObj) {
+       inputArr= Object.values(theObj);
+        console.log(inputArr);
         if (inputArr[0] == "Q") { // The string input is " very likely" a question 
-           return "it is question!"
-        }else{
-            return "I have no idea what you talking about!"
+            if((inputArr.includes("A") && inputArr.includes("O") && inputArr.includes("N")) ||
+                 (inputArr.includes("A") && inputArr.includes("O")) || inputArr.includes("S")){
+
+                    if(inputArr.includes("S") && inputArr.includes("AM")){
+                        return `Well my ${ getKeyByValue(theObj,"AM") } in the following subject ${getKeyByValue(theObj,"S")} is (should go an amount specific to the S value)`;
+                    }
+
+                    if(inputArr.includes("AM") && inputArr.includes("O")){
+                        return `My ${getKeyByValue(theObj,"AM") } ${getKeyByValue(theObj,"O")} is best describe as Awsome!`
+                    }
+
+
+                return "Hey Im working! "+getKeyByValue(theObj,"O");
+            }
+        }else if(inputArr.length==1 && inputArr.includes("O")){
+            return "Here you go! "+getKeyByValue(theObj,"O");
         }
     }
+
+
+    function getKeyByValue(object, value) {
+        return Object.keys(object).find(key => object[key] === value);
+      }
+
+
+
 
     function isItThere(thaWord) {
         const QuestionConstruct = [
             ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does", "would"],
             ["i", "mine", "me", "my", "they", "we", "she", "he", "them"],
-            ["need", "want", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide"],
-            ["resume", "about", "experience", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact", "info", "schooling", "education", "school", "degree", "degrees"],
-            ["you", "your", "mario", "mazza", "jeanny", "him", "his", "he"]
+            ["need", "want","favorite", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide","request"],
+            ["resume","attribute"," lenguage" ,"background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact", "info", "schooling", "education", "school", "degree", "degrees"],
+            ["you", "your", "mario", "mazza", "jeanny", "him", "his", "he"],
+            ["java","javascript","python","html","html5","css","css3","nodejs","reactjs","react"],
+            ["level","experience","amount","best","more","proficient","most"]
         ];
 
         for (let x = 0; x < QuestionConstruct.length; x++) {
@@ -130,15 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (QuestionConstruct[x][y] == thaWord) {
                     switch (x) {
                         case 0:
-                            return "Q";
+                            return "Q"; // Question words 
                         case 1:
-                            return "U";
+                            return "U"; // User identifier
                         case 2:
-                            return "N";
+                            return "N"; // Needs words for request 
                         case 3:
-                            return "O";
+                            return "O"; //General "objects" or "information"
                         case 4:
-                            return "A"
+                            return "A" // AI identifier
+                        case 5:
+                            return "S" // Specific skills 
+                        case 6:
+                            return "AM" //AMOUNT ex. quantifying words
                         default:
                             break;
                     }
@@ -163,10 +178,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 }, false);
-
-
-// for (int row = 0; row < board.length; row++) {
-//     for (int col = 0; col < board[row].length; col++) {
-//        board[row][col] = row * col;
-//     }
-//  }
