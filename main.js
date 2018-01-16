@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ["how old are you"],
         ["who are you", "are you human", "are you bot", "are you human or bot"],
         ["who created you", "who made you"],
-        ["your name please", "your name", "may i know your name", "what is your name"],
+        ["your name please","who are you" ,"your name", "may i know your name", "what is your name"],
         ["i love you", "do you like me","i like you"],
         ["happy", "good"],
         ["bad", "bored", "tired"],
@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
         ["bye", "good bye", "goodbye", "see you later", "later"],
         ["you suck", "you stupid", "you're stupid", "stupid machine", "you dumb", "you're dumb"],
-        ["tell me about you", "tell me more about yourself"],
-        ["who are you"],
+        ["tell me about you","tell me more about you", "tell me more about yourself"],
+        ["what type of music do you like","what is your favorite music"],
         ["what can you do", "what do you do", "what is your purpose", "what else can you do","now what"],
         ["do you like me"],
         ["what do you like to do", "what do you like", "what is your favorite thing to do", "what is your favorite passtime"]
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ["I am 1 day old"],
         ["I am just a bot", "I am a bot. What are you?"],
         ["Mario Mazza", "The Creator"],
-        ["I am Jenny Mario's personal assistant"], //, "I don't have a name"],
+        ["I am Jenny Mario's personal assistant","Hello there I'm Jenny it's nice to meet you!"], //, "I don't have a name"],
         ["I love you too", "Me too","I like you too"],
         ["Have you ever felt bad?", "Glad to hear it"],
         ["Why?", "Why? You shouldn't!", "Try watching TV"],
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ["Tell me a story", "Tell me a joke", "Tell me about yourself", "You are welcome"],
         ["Bye", "Goodbye", "See you later", "See you later alligator"],
         ["What do you need meatbag!!", "To Error is human, I never error!"],
-        ["I'm one of most sophisticated AI's in the market ;)", "Well my mom says that mind is made out of Javascript, my body is composed of HTML and my looks come from my aunt CSS!"],
-        ["I'm just a country girl!"],
+        ["I'm one of the most sophisticated AI's in the market ;)", "Well my mom says that mind is made out of Javascript, my body is composed of HTML and my looks come from my aunt CSS!"],
+        ["I'm just a country girl!","You can say that country makes my digital bones move!"],
         ["My sole purpose is to help you get to know my boss (aka Mario) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like FULL RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
         ["You know what I think I do!", "After getting to know you! you can say I do!"],
         ["You can say my favorite pass time is traversing to data found in servers"]
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         document.getElementById("chatbot").innerHTML = product;
-        speak(product); //THIS IS TEMP COMMENT
+        speak(product);
         document.getElementById("input").value = ""; //clear input value
     }
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does", "would"],
             ["i", "mine", "me", "my", "they", "we", "she", "he", "them"],
             ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
-            ["resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact", "info", "schooling", "education", "school", "degree", "degrees"],
+            ["resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact info", "schooling", "education", "school", "degree", "degrees"],
             ["you", "your", "mario", "mazza", "marios", "jeanny", "him", "his", "he"],
             ["java", "javascript", "python", "html", "html5", "css", "css3", "nodejs", "reactjs", "react", "language"],
             ["level", "experience", "amount", "best", "more", "proficient", "most"]
