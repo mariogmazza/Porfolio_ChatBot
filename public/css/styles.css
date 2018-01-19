@@ -1,0 +1,154 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  }
+
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+nav{
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+  color: aliceblue;
+}
+.fixed-nav nav {
+  margin-top: -60px;
+  position: fixed;
+}
+header .navbar {
+  background-color: rgb(37, 35, 35);
+  border-radius: 0;
+  /* margin: 0; */
+}
+
+.hero {
+  /* background-image: url(../img/planet.jpg);
+  background-repeat: no-repeat;;
+  background-size: cover;
+  background-position: center center; */
+  background-color: rgba(174, 112, 255, 1);
+  /* padding: 50px 0; */
+  min-height: 600px;
+  position: relative;
+  margin-top: -20px;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-content h2 {
+  color: #FFF;
+  font-size: 100px;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 30px;
+  text-shadow: 0px 25px 25px rgba(0, 0, 0, 0.1);
+  margin-top:-250px;
+}
+
+.hero-content p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 28px;
+  text-align: left;
+  line-height: 1.3;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.hero-content .btn {
+  border-radius: 2px;
+  padding: 20px 30px;
+}  
+
+main {
+  min-height: 500px;
+  padding: 50px 0;
+}
+
+footer {
+  padding: 30px 0;
+  font-size: 14px;
+  color: #BBB;
+  background: #222;
+  text-align: center;
+}
+
+.button1 {
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  margin-right: 10px;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  transform: scale(1,1);
+  transition: all 0.3s ease;
+}
+
+.button1:hover {
+  transform: scale(1.1,1.1);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 1);	
+  }
+
+a {
+  font-weight: 400;
+  text-decoration: none;
+  color: #5294ff;
+  position: relative;
+}
+
+a>div>img{
+height: 20px;
+}
+a>div>img:hover{
+height: 22px;
+}
+
+.contact{
+  display: flex;
+  margin-left: 30px;
+}
+
+.intro {
+	background-color: rgba(174, 112, 255, 1);
+	/* min-height: 70vh; */
+	padding: 100px 0px;
+}
+
+
+.playback{
+	background: url("../img/robotchat.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-blend-mode: overlay;
+	background-color: rgba(174, 112, 255, 1);
+}
+
+h4{
+  text-align: left;
+  margin-bottom: 12px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+@media (min-width:700px){
+
+
+}

@@ -1,20 +1,18 @@
 {
-  "name": "portfolio_chatbot",
+  "name": "node-site",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mariogmazza/Portfolio_ChatBot.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mariogmazza/Porfolio_ChatBot/issues"
-  },
-  "homepage": "https://github.com/mariogmazza/Porfolio_ChatBot#readme"
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "nodemon": "^1.10.2"
+  }
 }
