@@ -27,19 +27,16 @@ window.addEventListener('scroll', stickyNavigation);
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var c=0;
-    $('.play').hover(function(){  
-      //  if(c==0){   
-        //    c=1;
-        $('.intro').addClass('playback');  
-      //  }   
-    });
+    // var c=0;
+    // $('.play').hover(function(){  
+     
+    //     $('.intro').addClass('playback');  
+      
+    // });
 
-    $("p").hover(function(){
-        $('.intro').removeClass('playback');     
-       }); 
-
-      // clearTimeout(pepe);
+    // $("p").hover(function(){
+    //     $('.intro').removeClass('playback');     
+    //    }); 
 
 
   var trigger = [
@@ -71,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
       ["Nothing much", "About to go to sleep", "Can you guest?", "I don't know actually"],
       ["I am 1 day old"],
       ["I am just a bot", "I am a bot. What are you?"],
-      ["Mario Mazza", "The Creator"],
-      ["I am Jenny Mario's personal assistant","Hello there I'm Jenny it's nice to meet you!"], //, "I don't have a name"],
+      ["Gaston Mazza", "The Creator"],
+      ["I am Jenny Gaston's personal assistant","Hello there I'm Jenny it's nice to meet you!"],
       ["I love you too", "Me too","I like you too"],
       ["Have you ever felt bad?", "Glad to hear it"],
       ["Why?", "Why? You shouldn't!", "Try watching TV"],
@@ -82,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ["What do you need meatbag!!", "To Error is human, I never error!"],
       ["I'm one of the most sophisticated AI's in the market ;)", "Well my mom says that mind is made out of Javascript, my body is composed of HTML and my looks come from my aunt CSS!"],
       ["I'm just a country girl!","You can say that country makes my digital bones move!"],
-      ["My sole purpose is to help you get to know my boss (aka Mario) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like FULL RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
+      ["My sole purpose is to help you get to know my boss (aka Gaston) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like FULL RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
       ["You know what I think I do!", "After getting to know you! you can say I do!"],
       ["You can say my favorite pass time is traversing to data found in servers"]
   ];
@@ -115,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       document.getElementById("chatbot").innerHTML = product;
       speak(product);
+      $('#myModal').modal('toggle');
+
       document.getElementById("input").value = ""; //clear input value
   }
 
@@ -154,10 +153,20 @@ a value to each word
           count++;
       }
 
-     // console.log(myObj);
-
       return analysisArr(myObj);
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   /*This function checks the pattern in theObj 
     to make sure the user is requesting valid information
@@ -178,12 +187,23 @@ a value to each word
               }
 
               if (inputArr.includes("AM") && inputArr.includes("O")) {
-                  return `My ${getKeyByValue(theObj,"AM") } ${getKeyByValue(theObj,"O")} is best describe as Awsome!`;
+                  return `My ${getKeyByValue(theObj,"AM")} ${getKeyByValue(theObj,"O")} is best describe as Awsome!`;
               }
 
 
-              return "Here is what you've asked ! " + getKeyByValue(theObj, "O");
+              return `Here is what you've asked ! ${ 
+                
+                allAnswers[getKeyByValue(theObj, "O")]
+            
+            }`;
+
+
+
           }
+
+
+
+
       } else if (inputArr[0] == "N" && inputArr.includes("O")) {
           return `Here: ${getKeyByValue(theObj,"O")} what else you need?`;
 
@@ -199,6 +219,23 @@ a value to each word
   }
 
 
+
+  const allAnswers ={
+        skills:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
+        picture: "doggy"
+
+  }
+
+
+
+
+
+
+
+
+
+
+
   function getKeyByValue(object, value) {
       return Object.keys(object).find(key => object[key] === value);
   }
@@ -209,7 +246,7 @@ a value to each word
           ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does", "would"],
           ["i", "mine", "me", "my", "they", "we", "she", "he", "them"],
           ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
-          ["resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact info", "schooling", "education", "school", "degree", "degrees"],
+          ["full resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact info", "schooling", "education", "school", "degree", "degrees"],
           ["you", "your", "mario", "mazza", "marios", "jeanny", "him", "his", "he"],
           ["java", "javascript", "python", "html", "html5", "css", "css3", "nodejs", "reactjs", "react", "language"],
           ["level", "experience", "amount", "best", "more", "proficient", "most"]

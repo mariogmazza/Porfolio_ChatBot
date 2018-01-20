@@ -1,43 +1,75 @@
-
 <%- contentFor('hero') %>
-<section class="hero intro">
-  <div class="hero-content">
-    <h2>Oh <span class="play">hayy!</span></h2>
-		<p>I'm Gaston -- </p>
-		<p>Problem solver, knowledge hungy, and BBQ lover.</p>
+	<section class="hero intro playback">
+		<div class="hero-content">
+			<h2>Oh
+				<span class="play">hayy!</span>
+			</h2>
+			<p>I'm Gaston -- </p>
+			<p>Problem solver, knowledge hungy, and BBQ lover.</p>
 
-		<h4>Currently open to new opportunities! </h4>
+			<h4>Currently open to new opportunities! </h4>
 
-		<div class="contact">
-		<a href="mailto:gaston.mazza1@gmail.com">
-		<div class="button button1">
-			<img src="img/mail.svg">
+			<!-- CONTACT SECTION -->
+			<div class="contact">
+				<a href="mailto:gaston.mazza1@gmail.com">
+					<div class="button button1">
+						<img src="img/mail.svg">
+					</div>
+				</a>
+				<a href="https://www.linkedin.com/in/mario-mazza/" target="none">
+					<div class="button button1">
+						<img src="img/linkedin.svg" alt="icon">
+					</div>
+				</a>
+			</div>
+
 		</div>
-		</a>
+	</section>
 
-		<a href="https://www.linkedin.com/in/mario-mazza/" target="none">
-		<div class="button button1">
-			<img src="img/linkedin.svg" alt="icon">
+	<%- contentFor('body') %>
+
+		<div class="jumbotron text-center">
+			<h3>Oops I'm not in the office right now!</h3>
+			<h3>Please feel free to talk to my assistant,<br> 
+				She is able to answer	all your questions about me.
+			</h3>
+			<div id="main">
+				<div>user:
+					<span id="user"></span>
+				</div>
+				<!-- <div>chatbot:
+					<span id="chatbot"></span>
+				</div> -->
+				<div>
+					<input id="input" type="text" placeholder="say anything..." autocomplete="off" />
+				</div>
+			</div>
+
 		</div>
-		</a>
 
-	</div>
-	
+
+		<!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Personal Assistant</h4>
+      </div>
+      <div class="modal-body">
+				<!-- <p>Some text in the modal.</p> -->
+				<span id="chatbot"></span>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
-</section>
-
-<%- contentFor('body') %>
-<div class="jumbotron text-center">
-  <div id="main">
-		<div>user:
-			<span id="user"></span>
-		</div>
-		<div>chatbot:
-			<span id="chatbot"></span>
-		</div>
-		<div>
-			<input id="input" type="text" placeholder="say anything..." autocomplete="off" />
-		</div>
-	</div>
-	
 </div>

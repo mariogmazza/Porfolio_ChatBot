@@ -6,6 +6,7 @@
 body {
   font-size: 16px;
   line-height: 1.5;
+  background-color: black;
 }
 nav{
   width: 100%;
@@ -110,9 +111,14 @@ footer {
 a {
   font-weight: 400;
   text-decoration: none;
-  color: #5294ff;
+  /* color: #5294ff; */
   position: relative;
 }
+
+.navbar-inverse .navbar-brand {
+  color: #5294ff;
+}
+
 
 a>div>img{
 height: 20px;
@@ -148,6 +154,9 @@ h4{
   margin-left: 30px;
   margin-top: 20px;
 }
+
+
+
 @media (min-width:700px){
 
 
