@@ -34,14 +34,15 @@
 				She is able to answer	all your questions about me.
 			</h3>
 			<div id="main">
-				<div>user:
+				<!-- <div>user:
 					<span id="user"></span>
-				</div>
+				</div> -->
 				<!-- <div>chatbot:
 					<span id="chatbot"></span>
 				</div> -->
 				<div>
-					<input id="input" type="text" placeholder="say anything..." autocomplete="off" />
+					<!-- <input id="input" type="text" placeholder="say anything..." autocomplete="off" /> -->
+					<!-- <button class="btn btn-default">Let's chat!</button> -->
 				</div>
 			</div>
 
@@ -49,7 +50,7 @@
 
 
 		<!-- Trigger the modal with a button -->
-<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Let's Chat!</button>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -63,7 +64,10 @@
       </div>
       <div class="modal-body">
 				<!-- <p>Some text in the modal.</p> -->
-				<span id="chatbot"></span>
+				<div id="result"></div>
+				<button onClick="startConverting();"><i class="fa fa-microphone buttonMic"></i></button>
+
+				<h5 id="chatbot"></h5>
 
       </div>
       <div class="modal-footer">

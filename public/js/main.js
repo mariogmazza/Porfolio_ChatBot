@@ -25,7 +25,7 @@ window.addEventListener('scroll', stickyNavigation);
 
 // THIS IS MY BASIC CHATBOT 
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
     // var c=0;
     // $('.play').hover(function(){  
@@ -47,18 +47,19 @@ document.addEventListener('DOMContentLoaded', function () {
       ["who are you", "are you human", "are you bot", "are you human or bot"],
       ["who created you", "who made you"],
       ["your name please","who are you" ,"your name", "may i know your name", "what is your name"],
-      ["i love you", "do you like me","i like you"],
-      ["happy", "good"],
-      ["bad", "bored", "tired"],
+      ["i love you", "do you like me","i like you","do you love me","don't you like me","you love me"],
+      ["happy", "good","im happy","im good","i am happy","i am good"],
+      ["bad", "bored", "tired","im bored", "i am bored","you are boring"],
       ["help me", "tell me story", "tell me joke","can you help me"],
       ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
       ["bye", "good bye", "goodbye", "see you later", "later"],
       ["you suck", "you stupid", "you're stupid", "stupid machine", "you dumb", "you're dumb"],
       ["tell me about you","tell me more about you", "tell me more about yourself"],
       ["what type of music do you like","what is your favorite music"],
-      ["what can you do", "what do you do", "what is your purpose","what else do you do" ,"what else can you do","now what"],
+      ["what can you do", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
       ["do you like me"],
-      ["what do you like to do", "what do you like", "what is your favorite thing to do", "what is your favorite passtime"]
+      ["what do you like to do", "what do you like", "what is your favorite thing to do", "what is your favorite passtime"],
+      ["are you smart","how smart are you","you smart"]
   ];
 
 
@@ -81,18 +82,27 @@ document.addEventListener('DOMContentLoaded', function () {
       ["I'm just a country girl!","You can say that country makes my digital bones move!"],
       ["My sole purpose is to help you get to know my boss (aka Gaston) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like FULL RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
       ["You know what I think I do!", "After getting to know you! you can say I do!"],
-      ["You can say my favorite pass time is traversing to data found in servers"]
+      ["You can say my favorite pass time is traversing to data found in servers"],
+      ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"]
+
   ];
 
 
-  document.querySelector("#input").addEventListener("keypress", function (e) {
-      var key = e.which || e.keyCode;
-      if (key === 13) { //Enter button is pressed
-          var input = document.getElementById("input").value;
-          document.getElementById("user").innerHTML = input;
-          output(input);
-      }
-  });
+//   document.querySelector("#input").addEventListener("keypress", function (e) {
+//       var key = e.which || e.keyCode;
+//       if (key === 13) { //Enter button is pressed
+//         //   var input = document.getElementById("input").value;
+//         var input = document.getElementById("result");
+//         //   document.getElementById("user").innerHTML = input;
+//           output(input);
+//       }
+//   });
+
+ 
+
+
+
+
 
   function output(input) {
       try {
@@ -112,9 +122,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       document.getElementById("chatbot").innerHTML = product;
       speak(product);
-      $('#myModal').modal('toggle');
+    //   $('#myModal').modal('toggle');
 
-      document.getElementById("input").value = ""; //clear input value
+    //   document.getElementById("input").innerHTML = ""; //clear input value
   }
 
   function compare(arr, array, string) {
@@ -138,7 +148,7 @@ a value to each word
 */
 
   function alternative(input) {
-      let fullArr = [];
+    //   let fullArr = [];
       let splitQuetion = input.split(" ");
       let count = 0;
       let myObj = {};
@@ -147,7 +157,7 @@ a value to each word
 
           if (isItThere(splitQuetion[count]) !== -1) {
               myObj[splitQuetion[count]] = isItThere(splitQuetion[count]) // input.indexOf(splitQuetion[count]);
-              fullArr.push(isItThere(splitQuetion[count]));
+            //   fullArr.push(isItThere(splitQuetion[count]));
           }
 
           count++;
@@ -155,12 +165,6 @@ a value to each word
 
       return analysisArr(myObj);
   }
-
-
-
-
-
-
 
 
 
@@ -187,17 +191,11 @@ a value to each word
               }
 
               if (inputArr.includes("AM") && inputArr.includes("O")) {
-                  return `My ${getKeyByValue(theObj,"AM")} ${getKeyByValue(theObj,"O")} is best describe as Awsome!`;
+                  return `My ${getKeyByValue(theObj,"AM")} in ${getKeyByValue(theObj,"O")} is best describe as Awsome!`;
               }
 
-
-              return `Here is what you've asked ! ${ 
-                
-                allAnswers[getKeyByValue(theObj, "O")]
-            
-            }`;
-
-
+            // returns start Q has A and O and N || Q A O || just S 
+              return `Here is what you've asked ! ${allAnswers[getKeyByValue(theObj, "O")] }`;
 
           }
 
@@ -222,7 +220,21 @@ a value to each word
 
   const allAnswers ={
         skills:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
-        picture: "doggy"
+        picture: "<br><img src='../img/img_gaston.jpg' id='myPic'>",
+        languages: ["Javascript", "Java"],
+        language: ["Javascript", "Java"],
+        background:`Well He has always had a curious mind trying to understand how things work in detail, 
+                    He started his college education majoring in Computer Egineering which led him to take some 
+                    classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
+                    the 'Big picture' of programming. `,
+
+        contact:    "Phone number: 801-448-7820<br> Email address: gaston.mazza1@gmail.com",
+        "contact info": "Phone number: 801-448-7820<br>Email address: gaston.mazza1@gmail.com",
+
+        resume: "link to resume",
+
+        technologies:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
+        technology:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
 
   }
 
@@ -246,7 +258,7 @@ a value to each word
           ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does", "would"],
           ["i", "mine", "me", "my", "they", "we", "she", "he", "them"],
           ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
-          ["full resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills", "contact info", "schooling", "education", "school", "degree", "degrees"],
+          ["resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","contact" ,"contact information", "schooling", "education", "school", "degree", "degrees"],
           ["you", "your", "mario", "mazza", "marios", "jeanny", "him", "his", "he"],
           ["java", "javascript", "python", "html", "html5", "css", "css3", "nodejs", "reactjs", "react", "language"],
           ["level", "experience", "amount", "best", "more", "proficient", "most"]
@@ -303,4 +315,43 @@ a value to each word
   */
 
 
-}, false);
+// }, false);
+
+
+
+var r = document.getElementById("result");
+
+
+function startConverting () {
+  if('webkitSpeechRecognition' in window){
+      var speechRecognizer = new webkitSpeechRecognition();
+      speechRecognizer.continuous = false;
+      speechRecognizer.interimResults = true;
+      speechRecognizer.lang = 'en-IN';
+      speechRecognizer.start();
+
+      var finalTranscripts = '';
+
+      speechRecognizer.onresult = function(event){
+          var interimTranscripts = '';
+          for(var i = event.resultIndex; i < event.results.length; i++){
+              var transcript = event.results[i][0].transcript;
+              transcript.replace("\n", "<br>");
+              if(event.results[i].isFinal){
+                  finalTranscripts += transcript;
+                  output(finalTranscripts);
+
+              }else{
+                  interimTranscripts += transcript;
+              }
+          }
+          r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
+        //   output(finalTranscripts);
+      };
+      speechRecognizer.onerror = function (event) {
+      };
+  }else{
+      r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+  }
+}
+

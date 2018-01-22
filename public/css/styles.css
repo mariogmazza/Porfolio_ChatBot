@@ -156,6 +156,33 @@ h4{
 }
 
 
+/* Portfolio pic */
+#myPic{
+  width:200px;
+  height:200px;
+  border:1px solid blue;
+  border-radius:50%;
+}
+
+  /* SPEECH CSS */
+#result{
+  height: 100px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 #bbb;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.buttonMic{
+  font-size: 20px;
+  /* position: absolute; */
+  top: 240px;
+  left: 50%;
+}
+
+/*  ***************************** */
 
 @media (min-width:700px){
 
