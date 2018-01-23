@@ -47,19 +47,20 @@ window.addEventListener('scroll', stickyNavigation);
       ["who are you", "are you human", "are you bot", "are you human or bot"],
       ["who created you", "who made you"],
       ["do you have a name","your name please","who are you" ,"your name", "may i know your name", "what is your name"],
-      ["i love you", "do you like me","i like you","do you love me","don't you like me","you love me"],
+      ["i love you","i like you","do you love me","don't you like me","you love me"],
       ["happy", "good","im happy","im good","i am happy","i am good"],
       ["bad", "bored", "im sad","tired","im bored", "i am bored","you are boring"],
       ["help me", "tell me story", "tell me joke","can you help me"],
       ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
       ["bye", "good bye", "goodbye", "see you later", "later"],
       ["you suck", "you stupid", "youre stupid", "stupid machine", "you dumb", "youre dumb"],
-      ["tell me about you","tell me more about you", "tell me more about yourself"],
-      ["what type of music do you like","what is your favorite music"],
-      ["what can you do","command","commands", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
+      ["tell me about you","tell me more about you", "tell me more about yourself","tell me about yourself"],
+      ["what type of music do you like","what kind of music do you like","what is your favorite music"],
+      ["what can you do","tell me what you can do","tell me what can you do","command","commands", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
       ["do you like me"],
       ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
-      ["are you smart","how smart are you","you smart"]
+      ["are you smart","how smart are you","you smart"],
+      ["do you have the time","do you know the time", "what time is it","can you tell me the time"]
   ];
 
 
@@ -78,15 +79,22 @@ window.addEventListener('scroll', stickyNavigation);
       ["Tell me a story", "Tell me a joke", "Tell me about yourself", "You are welcome"],
       ["Bye", "Goodbye", "See you later", "See you later alligator"],
       ["What do you need meatbag!!", "To Error is human, I never error!"],
-      ["I'm one of the most sophisticated AI's in the market ;)", "Well my mom says that mind is made out of Javascript, my body is composed of HTML and my looks come from my aunt CSS!"],
-      ["I'm just zero's an one's!","You can say that country makes my digital bones move!"],
-      ["My sole purpose is to help you get to know my boss (aka Gaston) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
-      ["You know what I think I do!", "After getting to know you! you can say I do!"],
-      ["You can say my favorite pastime is traversing to data found in servers"],
-      ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"]
-
+      ["I'm just zero's an one's!","I'm one of the most sophisticated AI's in the market ;)", "Well my mom says that mind is made out of Javascript, my body is composed of HTML and my looks come from my aunt CSS!"],
+      ["You can say that country music makes my digital bones move!"],
+      ["My sole purpose is to help you get to know my boss (aka Gaston) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Gaston's resume things like RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
+      ["You know what I think I do!","I like you too","After getting to know you! you can say I do!"],
+      ["You can say my favorite pastime is traversing to data found in servers","I love listening to people's life stories"],
+      ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"],
+      [`here: ${getMeTheTime()} `]
   ];
 
+  function getMeTheTime(){
+   const d = new Date();
+   let h = d.getHours(); 
+   let m = d.getMinutes(); 
+//    let s =  d.getSeconds(); 
+    return h+": "+m;
+  }
 
   document.querySelector("#input").addEventListener("keypress", function (e) {
       var key = e.which || e.keyCode;
@@ -112,9 +120,10 @@ window.addEventListener('scroll', stickyNavigation);
       } catch (e) {
           var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and 
 
-          text = text.replace(/ a /g, " ").replace(/because /g,"").replace(/ because/g,"").replace(/ok /g,"").replace(/[ \t]+$/ ,"").replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
+          text = text.replace(/ a /g, " ").replace(/because /g,"").replace(/ because/g,"").replace(/ok /g,"").replace(/[ \t]+$/ ,"").replace(/i feel /g, "").replace(/just /g,"").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
 
-          console.log(text + " this is in output func");
+          console.log(text + " AFTER CLEANING");
+
           if (compare(trigger, reply, text)) {
               var product = compare(trigger, reply, text);
           } else {
@@ -205,30 +214,51 @@ a value to each word
     /* **************************************************** */
 
     /* Q - BLOCK 2 *************************************** */
-          console.log("Im inside");
+         
           if(inputArr.includes("N") && inputArr[inputArr.length-1]==="A"){
+            console.log("Im inside 1");
             return `Let me see. ${allAnswers["background"]}`;
           }    
 
     /*  *************************************************** */
 
-    /* START != Q - BLOCK ************************************* */
+    /* START != Q - BLOCK (NOT Q) ************************************* */
 
-        }else  if (inputArr.includes("Q") || inputArr.includes("N") && inputArr[inputArr.length-1]=="A"){
+        }else  if (inputArr.includes("Q") && inputArr.includes("N") && inputArr[inputArr.length-1]==="A"){
+            console.log("Im inside 2 "+inputArr[inputArr.length-1]);
                 return `Let me see. ${allAnswers["background"]}`;
         
 
           // IF PHRASE STARTS WITH A "NEED"
-      } else if (inputArr[0] == "N" && inputArr.includes("O")) { 
-          return `Here:[N] ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
-
+      } else if (inputArr[0] == "N" ){
+      if (inputArr.includes("O")) { 
+          return `Here:[N][O] ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
+      }else if(inputArr.includes("A")){
+          return `Here:[N][A] ${allAnswers[getKeyByValue(theObj,"A")]}`;
+      }
           // IF PHRASE JUST ASKS FOR AN "OBJECT" EX. RESUME
       } else if (inputArr.length == 1 && inputArr.includes("O")) {
-          return `Here you go![1] ${getKeyByValue(theObj,"O")}`;
+          return `Here you go![just obj] ${getKeyByValue(theObj,"O")}`;
 
         // IF PHRASE STARTS REFERING DIRECTLY TO THE "AI" AND INCLUDES AN "OBJECT"
       } else if (inputArr[0] == "A" && inputArr.includes("O")) {
           return `Here you go [2]! ${getKeyByValue(theObj,"O")}`;
+
+          // IF PHRASE STARTS WITH "USER ID" EX.(I , ME ..) 
+      }else if(inputArr[0] == "U"){
+          if(
+            (inputArr.includes("N") && inputArr.includes("A") && inputArr.includes("O") &&
+             inputArr.includes("Q")) 
+             || 
+             (inputArr.includes("N") || (inputArr.includes("A") && inputArr.includes("O")) ||
+             inputArr.includes("Q"))
+            //  ||
+            //  (inputArr.includes("N") && inputArr.includes("A") && inputArr.includes("O") &&
+            //  inputArr.includes("Q")
+
+            ){
+              return `Here:[N] ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
+          }
       }
 
       /* ********************************************************* */
@@ -240,23 +270,77 @@ a value to each word
 
   const allAnswers ={
         skills:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
+        skill:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
+
         picture: "<br><img src='../img/img_gaston.jpg' id='myPic'>",
+        pic: "<br><img src='../img/img_gaston.jpg' id='myPic'>",
+
         languages: ["Javascript", "Java"],
         language: ["Javascript", "Java"],
-        background: `Well He has always had a curious mind trying to understand how things work in detail, 
-                     He started his college education majoring in Computer Egineering which led him to take some 
+
+        background: `Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
+                     He started his college education majoring in Computer Engineering which led him to take some 
+                     classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
+                     the 'Big picture' of programming. `,
+
+        mario:     `Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
+                     He started his college education majoring in Computer Engineering which led him to take some 
                      classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
                      the 'Big picture' of programming. `,
 
         contact:    "Phone number: 801-448-7820<br> Email address: gaston.mazza1@gmail.com",
-        resume: "<a href='../img/Gaston_Mazza_Resume.pdf'>click here</a>" ,
+        resume: "<a href='../img/Gaston_Mazza_Resume.pdf' target='_blank'>click here</a>" ,
 
         technologies:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
         technology:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
+
         phone:"801-448-7820",
         email:"gaston.mazza1@gmail.com",
-        hobby:["food","rugby","code monky"],
-        hobbies:["food","rugby","code monky"]
+
+        hobby:["learnig something new","rugby","coding"],
+        hobbies:["learnig something new","rugby","coding"],
+
+        interests:["making money","learning how to make more money"],
+        interest:["making money","learning how to make more money"],
+
+        references: "list of references",
+        reference: "linst of reference",
+
+        projects: "list of project",
+        project: "list of projects",
+
+        education: "<h4>2017 Cert. Full Stack Web Developer, University of Central Florida.<br>2015 Major in Computer Science, Millersville University PA.</h4>",
+        schooling: "<h4>2017 Cert. Full Stack Web Developer, University of Central Florida.<br>2015 Major in Computer Science, Millersville University PA.</h4>",
+
+
+        degree: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
+        degrees: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
+
+        certificate: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
+        certicicates: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
+
+        work: `
+       <h4> Wells Fargo Bank, Lititz, PA			<span>     </span>October 2014 - August 2017<br>
+         Personal Banker
+         Expanded customer relationships by maintaining a regular follow-up process and building rapport with each customer.
+         Worked closely with management to strategize sales techniques to increase branch production and customer service satisfaction.
+         Goal-driven position. <br>
+
+        CompSolutions, Salt Lake City, UT							May 2008 - July 2014
+         Help Desk / Field Technician 
+         Skilled problem-solver able to communicate with users at all levels of technical proficiency. Troubleshoot, resolve and document user help requests for desktop, laptop, mobile, network and peripheral problems.
+         Maintain and support systems, workstations, mobile devices, printers and peripherals; respond to user service requests; and resolve trouble tickets. </h4> `,
+
+        Frameworks: "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
+        Framework:  "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
+
+        Libraries: " <h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js </h4>",
+
+
+
+
+
+
 
   }
 
@@ -283,7 +367,7 @@ a value to each word
 
           ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
 
-          ["resume","hobby","hobbies","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","contact" ,"contact information", "schooling", "education", "school","experiences", "degree", "degrees"],
+          ["resume","work","hobby","hobbies","interests","interest","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","skill","contact" ,"contact information", "schooling", "education", "school","experiences","framework","frameworks","libraries","certificates","certificate","degree", "degrees"],
 
           ["you", "your","yourself", "mario", "mazza", "marios","gaston","gastons", "alex", "him", "his", "he"],
 
