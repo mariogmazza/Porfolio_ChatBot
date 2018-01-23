@@ -41,24 +41,24 @@ window.addEventListener('scroll', stickyNavigation);
 
   var trigger = [
       ["hi", "hey", "hello", "aloha", "yo", "sup", "sup bro", "hey there", "what is up"],
-      ["how are you", "how is life", "how are things"],
+      ["how are you", "how is life", "how are things","hows life"],
       ["what are you doing", "what is going on"],
       ["how old are you"],
       ["who are you", "are you human", "are you bot", "are you human or bot"],
       ["who created you", "who made you"],
-      ["your name please","who are you" ,"your name", "may i know your name", "what is your name"],
+      ["do you have a name","your name please","who are you" ,"your name", "may i know your name", "what is your name"],
       ["i love you", "do you like me","i like you","do you love me","don't you like me","you love me"],
       ["happy", "good","im happy","im good","i am happy","i am good"],
-      ["bad", "bored", "tired","im bored", "i am bored","you are boring"],
+      ["bad", "bored", "im sad","tired","im bored", "i am bored","you are boring"],
       ["help me", "tell me story", "tell me joke","can you help me"],
       ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
       ["bye", "good bye", "goodbye", "see you later", "later"],
-      ["you suck", "you stupid", "you're stupid", "stupid machine", "you dumb", "you're dumb"],
+      ["you suck", "you stupid", "youre stupid", "stupid machine", "you dumb", "youre dumb"],
       ["tell me about you","tell me more about you", "tell me more about yourself"],
       ["what type of music do you like","what is your favorite music"],
-      ["what can you do", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
+      ["what can you do","command","commands", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
       ["do you like me"],
-      ["what do you like to do", "what do you like", "what is your favorite thing to do", "what is your favorite passtime"],
+      ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
       ["are you smart","how smart are you","you smart"]
   ];
 
@@ -70,7 +70,7 @@ window.addEventListener('scroll', stickyNavigation);
       ["I am 1 day old"],
       ["I am just a bot", "I am a bot. What are you?"],
       ["Gaston Mazza", "The Creator"],
-      ["I am Jenny Gaston's personal assistant","Hello there I'm Jenny it's nice to meet you!"],
+      ["I am Alex Gaston's personal assistant","Hello there I'm Alex it's nice to meet you!"],
       ["I love you too", "Me too","I like you too"],
       ["Have you ever felt bad?", "Glad to hear it"],
       ["Why?", "Why? You shouldn't!", "Try watching TV"],
@@ -79,24 +79,26 @@ window.addEventListener('scroll', stickyNavigation);
       ["Bye", "Goodbye", "See you later", "See you later alligator"],
       ["What do you need meatbag!!", "To Error is human, I never error!"],
       ["I'm one of the most sophisticated AI's in the market ;)", "Well my mom says that mind is made out of Javascript, my body is composed of HTML and my looks come from my aunt CSS!"],
-      ["I'm just a country girl!","You can say that country makes my digital bones move!"],
-      ["My sole purpose is to help you get to know my boss (aka Gaston) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like FULL RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
+      ["I'm just zero's an one's!","You can say that country makes my digital bones move!"],
+      ["My sole purpose is to help you get to know my boss (aka Gaston) so he can finally find a job and stops messing with my code! ", "You can ask me anything in reference to Mario's resume things like RESUME, PICTURE, EXPERIENCE, SKILLS, EDUCATION, etc. You get the idea!! "],
       ["You know what I think I do!", "After getting to know you! you can say I do!"],
-      ["You can say my favorite pass time is traversing to data found in servers"],
+      ["You can say my favorite pastime is traversing to data found in servers"],
       ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"]
 
   ];
 
 
-//   document.querySelector("#input").addEventListener("keypress", function (e) {
-//       var key = e.which || e.keyCode;
-//       if (key === 13) { //Enter button is pressed
-//         //   var input = document.getElementById("input").value;
-//         var input = document.getElementById("result");
-//         //   document.getElementById("user").innerHTML = input;
-//           output(input);
-//       }
-//   });
+  document.querySelector("#input").addEventListener("keypress", function (e) {
+      var key = e.which || e.keyCode;
+      if (key === 13) { //Enter button is pressed
+          var input = document.getElementById("input").value;
+
+        //   document.getElementById("user").innerHTML = input;
+          output(input);
+          document.getElementById("input").value = ""; //clear input value
+
+      }
+  });
 
  
 
@@ -110,7 +112,7 @@ window.addEventListener('scroll', stickyNavigation);
       } catch (e) {
           var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and 
 
-          text = text.replace(/ a /g, " ").replace(/ok /g,"").replace(/[ \t]+$/ ,"").replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
+          text = text.replace(/ a /g, " ").replace(/because /g,"").replace(/ because/g,"").replace(/ok /g,"").replace(/[ \t]+$/ ,"").replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
 
           console.log(text + " this is in output func");
           if (compare(trigger, reply, text)) {
@@ -183,6 +185,8 @@ a value to each word
       console.log(inputArr);
 
       if (inputArr[0] == "Q") { // The string input is " very likely" a question 
+
+    /* Q - BLOCK 1 ***************************************  */
           if ((inputArr.includes("A") && inputArr.includes("O") && inputArr.includes("N")) ||
               (inputArr.includes("A") && inputArr.includes("O")) || inputArr.includes("S")) {
 
@@ -192,26 +196,42 @@ a value to each word
 
               if (inputArr.includes("AM") && inputArr.includes("O")) {
                   return `My ${getKeyByValue(theObj,"AM")} in ${getKeyByValue(theObj,"O")} is best describe as Awsome!`;
-              }
+              };
 
             // returns start Q has A and O and N || Q A O || just S 
               return `Here is what you've asked ! ${allAnswers[getKeyByValue(theObj, "O")] }`;
-
           }
 
+    /* **************************************************** */
 
+    /* Q - BLOCK 2 *************************************** */
+          console.log("Im inside");
+          if(inputArr.includes("N") && inputArr[inputArr.length-1]==="A"){
+            return `Let me see. ${allAnswers["background"]}`;
+          }    
 
+    /*  *************************************************** */
 
-      } else if (inputArr[0] == "N" && inputArr.includes("O")) {
-          return `Here: ${getKeyByValue(theObj,"O")} what else you need?`;
+    /* START != Q - BLOCK ************************************* */
 
+        }else  if (inputArr.includes("Q") || inputArr.includes("N") && inputArr[inputArr.length-1]=="A"){
+                return `Let me see. ${allAnswers["background"]}`;
+        
+
+          // IF PHRASE STARTS WITH A "NEED"
+      } else if (inputArr[0] == "N" && inputArr.includes("O")) { 
+          return `Here:[N] ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
+
+          // IF PHRASE JUST ASKS FOR AN "OBJECT" EX. RESUME
       } else if (inputArr.length == 1 && inputArr.includes("O")) {
           return `Here you go![1] ${getKeyByValue(theObj,"O")}`;
+
+        // IF PHRASE STARTS REFERING DIRECTLY TO THE "AI" AND INCLUDES AN "OBJECT"
       } else if (inputArr[0] == "A" && inputArr.includes("O")) {
           return `Here you go [2]! ${getKeyByValue(theObj,"O")}`;
       }
 
-
+      /* ********************************************************* */
 
 
   }
@@ -223,18 +243,20 @@ a value to each word
         picture: "<br><img src='../img/img_gaston.jpg' id='myPic'>",
         languages: ["Javascript", "Java"],
         language: ["Javascript", "Java"],
-        background:`Well He has always had a curious mind trying to understand how things work in detail, 
-                    He started his college education majoring in Computer Egineering which led him to take some 
-                    classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
-                    the 'Big picture' of programming. `,
+        background: `Well He has always had a curious mind trying to understand how things work in detail, 
+                     He started his college education majoring in Computer Egineering which led him to take some 
+                     classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
+                     the 'Big picture' of programming. `,
 
         contact:    "Phone number: 801-448-7820<br> Email address: gaston.mazza1@gmail.com",
-        "contact info": "Phone number: 801-448-7820<br>Email address: gaston.mazza1@gmail.com",
-
-        resume: "link to resume",
+        resume: "<a href='../img/Gaston_Mazza_Resume.pdf'>click here</a>" ,
 
         technologies:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
         technology:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
+        phone:"801-448-7820",
+        email:"gaston.mazza1@gmail.com",
+        hobby:["food","rugby","code monky"],
+        hobbies:["food","rugby","code monky"]
 
   }
 
@@ -256,12 +278,20 @@ a value to each word
   function isItThere(thaWord) {
       const QuestionConstruct = [
           ["what", "where", "who", "when", "why", "how", "can", "could", "do", "does", "would"],
+
           ["i", "mine", "me", "my", "they", "we", "she", "he", "them"],
+
           ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
-          ["resume", "attribute", "languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","contact" ,"contact information", "schooling", "education", "school", "degree", "degrees"],
-          ["you", "your", "mario", "mazza", "marios", "jeanny", "him", "his", "he"],
+
+          ["resume","hobby","hobbies","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","contact" ,"contact information", "schooling", "education", "school","experiences", "degree", "degrees"],
+
+          ["you", "your","yourself", "mario", "mazza", "marios","gaston","gastons", "alex", "him", "his", "he"],
+
           ["java", "javascript", "python", "html", "html5", "css", "css3", "nodejs", "reactjs", "react", "language"],
-          ["level", "experience", "amount", "best", "more", "proficient", "most"]
+
+          ["level", "experience", "amount", "best", "more", "proficient", "most"],
+
+          ["before","after","last","lattest","currently","previous","previously"]
       ];
 
       for (let x = 0; x < QuestionConstruct.length; x++) {
@@ -282,6 +312,8 @@ a value to each word
                           return "S"; // Specific skills 
                       case 6:
                           return "AM";// AMOUNT ex. quantifying words
+                      case 7:
+                          return "T" ; //Time  
                       default:
                           break;
                   }
@@ -339,7 +371,11 @@ function startConverting () {
               transcript.replace("\n", "<br>");
               if(event.results[i].isFinal){
                   finalTranscripts += transcript;
+
+                  if(finalTranscripts){
+                    document.getElementById("result").innerHTML="";
                   output(finalTranscripts);
+                  }
 
               }else{
                   interimTranscripts += transcript;
