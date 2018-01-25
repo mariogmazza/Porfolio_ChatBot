@@ -1,4 +1,3 @@
-// import { setTimeout, clearTimeout } from "timers";
 
 const nav = document.querySelector('#navigation');
 const navTop = nav.offsetTop;
@@ -25,19 +24,6 @@ window.addEventListener('scroll', stickyNavigation);
 
 // THIS IS MY BASIC CHATBOT 
 
-// document.addEventListener('DOMContentLoaded', function () {
-
-    // var c=0;
-    // $('.play').hover(function(){  
-     
-    //     $('.intro').addClass('playback');  
-      
-    // });
-
-    // $("p").hover(function(){
-    //     $('.intro').removeClass('playback');     
-    //    }); 
-
 
   var trigger = [
       ["hi", "hey", "hello", "aloha", "yo", "sup", "sup bro", "hey there", "what is up"],
@@ -59,7 +45,7 @@ window.addEventListener('scroll', stickyNavigation);
       ["what can you do","tell me what you can do","tell me what can you do","command","commands", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
       ["do you like me"],
       ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
-      ["are you smart","how smart are you","you smart"],
+      ["are you smart","how smart are you","you smart", "you are cool"],
       ["do you have the time","do you know the time", "what time is it","can you tell me the time"]
   ];
 
@@ -263,6 +249,7 @@ a value to each word
 
       /* ********************************************************* */
 
+      return "I'm sorry at this moment I'm not able to answer that. You could try rephrasing your question! Thanks"
 
   }
 
@@ -336,21 +323,7 @@ a value to each word
 
         Libraries: " <h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js </h4>",
 
-
-
-
-
-
-
   }
-
-
-
-
-
-
-
-
 
 
 
