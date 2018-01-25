@@ -47,7 +47,7 @@ window.addEventListener('scroll', stickyNavigation);
       ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
       ["are you smart","how smart are you","you smart"],
       ["do you have the time","do you know the time", "what time is it","can you tell me the time"],
-      ["you are cool","youre cool","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"]
+      ["you are cool","youre cool","you cool","you are the best","youre the best","you the best","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"]
   ];
 
 
