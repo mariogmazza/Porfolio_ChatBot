@@ -220,17 +220,17 @@ a value to each word
           // IF PHRASE STARTS WITH A "NEED"
       } else if (inputArr[0] == "N" ){
       if (inputArr.includes("O")) { 
-          return `Here:[N][O] ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
+          return `Here: ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
       }else if(inputArr.includes("A")){
-          return `Here:[N][A] ${allAnswers[getKeyByValue(theObj,"A")]}`;
+          return `Here: ${allAnswers[getKeyByValue(theObj,"A")]}`;
       }
           // IF PHRASE JUST ASKS FOR AN "OBJECT" EX. RESUME
       } else if (inputArr.length == 1 && inputArr.includes("O")) {
-          return `Here you go![just obj] ${getKeyByValue(theObj,"O")}`;
+          return `Here you go! ${allAnswers[getKeyByValue(theObj,"O")]}`;
 
         // IF PHRASE STARTS REFERING DIRECTLY TO THE "AI" AND INCLUDES AN "OBJECT"
       } else if (inputArr[0] == "A" && inputArr.includes("O")) {
-          return `Here you go [2]! ${getKeyByValue(theObj,"O")}`;
+          return `Let me see! ${allAnswers[getKeyByValue(theObj,"O")]}`;
 
           // IF PHRASE STARTS WITH "USER ID" EX.(I , ME ..) 
       }else if(inputArr[0] == "U"){
@@ -245,7 +245,7 @@ a value to each word
             //  inputArr.includes("Q")
 
             ){
-              return `Here:[N] ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
+              return `Here: ${allAnswers[getKeyByValue(theObj, "O")] } what else you need?`;
           }
       }
 
@@ -320,11 +320,13 @@ a value to each word
          Skilled problem-solver able to communicate with users at all levels of technical proficiency. Troubleshoot, resolve and document user help requests for desktop, laptop, mobile, network and peripheral problems.
          Maintain and support systems, workstations, mobile devices, printers and peripherals; respond to user service requests; and resolve trouble tickets. </h4> `,
 
-        Frameworks: "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
-        Framework:  "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
+        frameworks: "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
+        framework:  "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
 
-        Libraries: " <h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js </h4>",
-
+        libraries: " <h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js </h4>",
+        made:"A higher being ...Gaston ;)",
+        creator: "A higher being ...Gaston ;)",
+        maker: "A higher being ...Gaston ;)"
   }
 
 
@@ -342,7 +344,7 @@ a value to each word
 
           ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
 
-          ["resume","work","hobby","hobbies","interests","interest","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","skill","contact" ,"contact information", "schooling", "education", "school","experiences","framework","frameworks","libraries","certificates","certificate","degree", "degrees"],
+          ["resume","work","hobby","creator","made","maker","hobbies","interests","interest","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","skill","contact" ,"contact information", "schooling", "education", "school","experiences","framework","frameworks","libraries","certificates","certificate","degree", "degrees"],
 
           ["you", "your","yourself", "mario", "mazza", "marios","gaston","gastons", "alex", "him", "his", "he"],
 
