@@ -45,8 +45,9 @@ window.addEventListener('scroll', stickyNavigation);
       ["what can you do","tell me what you can do","tell me what can you do","command","commands", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
       ["do you like me"],
       ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
-      ["are you smart","how smart are you","you smart", "you are cool"],
-      ["do you have the time","do you know the time", "what time is it","can you tell me the time"]
+      ["are you smart","how smart are you","you smart"],
+      ["do you have the time","do you know the time", "what time is it","can you tell me the time"],
+      ["you are cool","youre cool","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"]
   ];
 
 
@@ -71,7 +72,8 @@ window.addEventListener('scroll', stickyNavigation);
       ["You know what I think I do!","I like you too","After getting to know you! you can say I do!"],
       ["You can say my favorite pastime is traversing to data found in servers","I love listening to people's life stories"],
       ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"],
-      [`here: ${getMeTheTime()} `]
+      [`here: ${getMeTheTime()} `],
+      ["Thanks I try really hard!","Wow Thanks!","You too!","I knew I chose the right profession"]
   ];
 
   function getMeTheTime(){
