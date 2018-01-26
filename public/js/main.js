@@ -25,6 +25,8 @@ window.addEventListener('scroll', stickyNavigation);
 // THIS IS MY BASIC CHATBOT 
 
 
+
+
   var trigger = [
       ["hi", "hey", "hello", "aloha", "yo", "sup", "sup bro", "hey there", "what is up"],
       ["how are you", "how is life", "how are things","hows life"],
@@ -47,7 +49,8 @@ window.addEventListener('scroll', stickyNavigation);
       ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
       ["are you smart","how smart are you","you smart"],
       ["do you have the time","do you know the time", "what time is it","can you tell me the time"],
-      ["you are cool","youre cool","you cool","you are the best","youre the best","you the best","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"]
+      ["you are cool","youre cool","you cool","you are the best","youre the best","you the best","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"],
+      ["how can i get in touch with mario","how can i get in touch with gaston"]
   ];
 
 
@@ -73,7 +76,9 @@ window.addEventListener('scroll', stickyNavigation);
       ["You can say my favorite pastime is traversing to data found in servers","I love listening to people's life stories"],
       ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"],
       [`here: ${getMeTheTime()} `],
-      ["Thanks I try really hard!","Wow Thanks!","You too!","I knew I chose the right profession"]
+      ["Thanks I try really hard!","Wow Thanks!","You too!","I knew I chose the right profession","I know","Thank you","We make a good team"],
+      [`<h4>Hi, my email: gaston.mazza1@gmail.com<br>
+               phone: 801 448 7820 </h4>`]
   ];
 
   function getMeTheTime(){
@@ -162,7 +167,7 @@ a value to each word
           count++;
       }
 
-      return analysisArr(myObj);
+      return analysisArr(myObj, splitQuetion.length);
   }
 
 
@@ -175,7 +180,7 @@ a value to each word
     to make sure the user is requesting valid information
     and calls the appropiate function.
   */
-  function analysisArr(theObj) {
+  function analysisArr(theObj, phraseLength) {
 
       inputArr = Object.values(theObj);
 
@@ -225,7 +230,7 @@ a value to each word
           return `Here: ${allAnswers[getKeyByValue(theObj,"A")]}`;
       }
           // IF PHRASE JUST ASKS FOR AN "OBJECT" EX. RESUME
-      } else if (inputArr.length == 1 && inputArr.includes("O")) {
+      } else if (phraseLength == 1 && inputArr.includes("O")) {
           return `Here you go! ${allAnswers[getKeyByValue(theObj,"O")]}`;
 
         // IF PHRASE STARTS REFERING DIRECTLY TO THE "AI" AND INCLUDES AN "OBJECT"
@@ -256,8 +261,8 @@ a value to each word
   }
 
 
-
-  const allAnswers ={
+// i have to change to const 
+const  allAnswers ={
         skills:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
         skill:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
 
@@ -315,7 +320,7 @@ a value to each word
          Worked closely with management to strategize sales techniques to increase branch production and customer service satisfaction.
          Goal-driven position. <br>
 
-        CompSolutions, Salt Lake City, UT							May 2008 - July 2014
+        CompSolutions, Salt Lake City, UT			<span>     </span>May 2008 - July 2014<br>
          Help Desk / Field Technician 
          Skilled problem-solver able to communicate with users at all levels of technical proficiency. Troubleshoot, resolve and document user help requests for desktop, laptop, mobile, network and peripheral problems.
          Maintain and support systems, workstations, mobile devices, printers and peripherals; respond to user service requests; and resolve trouble tickets. </h4> `,
@@ -324,6 +329,7 @@ a value to each word
         framework:  "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
 
         libraries: " <h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js </h4>",
+        
         made:"A higher being ...Gaston ;)",
         creator: "A higher being ...Gaston ;)",
         maker: "A higher being ...Gaston ;)"
@@ -420,7 +426,7 @@ function startConverting () {
       var speechRecognizer = new webkitSpeechRecognition();
       speechRecognizer.continuous = false;
       speechRecognizer.interimResults = true;
-      speechRecognizer.lang = 'en-IN';
+      speechRecognizer.lang = 'en-US';
       speechRecognizer.start();
 
       var finalTranscripts = '';
