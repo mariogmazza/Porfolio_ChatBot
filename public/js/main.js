@@ -266,8 +266,8 @@ const  allAnswers ={
         skills:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
         skill:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
 
-        picture: "<br><img src='../img/img_gaston.jpg' id='myPic'>",
-        pic: "<br><img src='../img/img_gaston.jpg' id='myPic'>",
+        picture: "<br><br><img src='../img/img_gaston.jpg' id='myPic'>",
+        pic: "<br><br><img src='../img/img_gaston.jpg' id='myPic'> ",
 
         languages: ["Javascript", "Java"],
         language: ["Javascript", "Java"],
@@ -298,10 +298,92 @@ const  allAnswers ={
         interest:["making money","learning how to make more money"],
 
         references: "list of references",
-        reference: "linst of reference",
 
-        projects: "list of project",
-        project: "list of projects",
+        reference: "list of reference",
+
+        projects: `<h4>
+        Project 1:<br>
+        <br>
+       <span style="font-weight:bolder"> The Memory Game based on the classic Simon Game from the 80's </span> <br>
+         <br>
+         <br>
+              About This Site <br>
+        Technologies used Node/Express/React/PassportJS/MongoDB/Mongoose and some other NPM packages.
+          <br>
+          <br>
+              The Idea behind it <br>
+        Build a website that brings in people for the classic game of "Simon", if user registers the scores will be <br>saved to allow the user to measure his/her performance. When a register user logs in more "memory" games will be available to them.
+          </h4>
+          <h4>View from a non-registered user </h4>
+          <img src='../img/Simon_nonUser.gif' id='memo1'>"
+          <h4> View from a registered user </h4>
+          <img src='../img/Simon_user.gif' id='memo2'>" 
+
+          <br>
+          <br>
+
+          <h4>
+        Project 2: <br>
+          <br>
+          <span style="font-weight:bolder"> Pay It Forward </span> <br>
+         <br>
+         <br>
+          The Idea behind it <br>
+          Matching donors with recipients who will in turn volunteer at a charity in exchange for the support. Built using node, express, EJS, Bootstrap, HTML5, mySQL, and deployed at Heroku. Developed as mobile responsive.
+        </h4>
+        <h4>Desktop view</h4>
+        <img src='../img/desktop_view.png' id='pay1'>"
+        <h4>User view</h4>
+        <img src='../img/dashboard_user.png' id='pay2'>"
+        <h4>Donor view</h4>
+        <img src='../img/dashboard_donor.png' id='pay3'>"
+        <h4>Mobile view</h4>
+        <img src='../img/mobile_view.png' id='pay4'>"
+           `
+        ,
+
+
+        project:   
+        `<h4>
+        Project 1:<br>
+        <br>
+       <span style="font-weight:bolder"> The Memory Game based on the classic Simon Game from the 80's </span> <br>
+         <br>
+         <br>
+              About This Site <br>
+        Technologies used Node/Express/React/PassportJS/MongoDB/Mongoose and some other NPM packages.
+          <br>
+          <br>
+              The Idea behind it <br>
+        Build a website that brings in people for the classic game of "Simon", if user registers the scores will be <br>saved to allow the user to measure his/her performance. When a register user logs in more "memory" games will be available to them.
+          </h4>
+          <h4>View from a non-registered user </h4>
+          <img src='../img/Simon_nonUser.gif' id='memo1'>"
+          <h4> View from a registered user </h4>
+          <img src='../img/Simon_user.gif' id='memo2'>" 
+
+          <br>
+          <br>
+
+          <h4>
+        Project 2: <br>
+          <br>
+          <span style="font-weight:bolder"> Pay It Forward </span> <br>
+         <br>
+         <br>
+          The Idea behind it <br>
+          Matching donors with recipients who will in turn volunteer at a charity in exchange for the support. Built using node, express, EJS, Bootstrap, HTML5, mySQL, and deployed at Heroku. Developed as mobile responsive.
+        </h4>
+        <h4>Desktop view</h4>
+        <img src='../img/desktop_view.png' id='pay1'>"
+        <h4>User view</h4>
+        <img src='../img/dashboard_user.png' id='pay2'>"
+        <h4>Donor view</h4>
+        <img src='../img/dashboard_donor.png' id='pay3'>"
+        <h4>Mobile view</h4>
+        <img src='../img/mobile_view.png' id='pay4'>"
+          
+          `,
 
         education: "<h4>2017 Cert. Full Stack Web Developer, University of Central Florida.<br>2015 Major in Computer Science, Millersville University PA.</h4>",
         schooling: "<h4>2017 Cert. Full Stack Web Developer, University of Central Florida.<br>2015 Major in Computer Science, Millersville University PA.</h4>",
@@ -350,7 +432,7 @@ const  allAnswers ={
 
           ["need", "want", "favorite", "show", "get", "fetch", "serve", "give", "have", "has", "tell", "share", "provide", "request"],
 
-          ["resume","work","hobby","creator","made","maker","hobbies","interests","interest","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures", "pic", "job", "jobs", "skills","skill","contact" ,"contact information", "schooling", "education", "school","experiences","framework","frameworks","libraries","certificates","certificate","degree", "degrees"],
+          ["resume","work","hobby","creator","made","maker","hobbies","interests","interest","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures","references","reference", "pic", "job", "jobs", "skills","skill","contact" ,"contact information", "schooling", "education", "school","experiences","framework","frameworks","libraries","library","certificates","certificate","degree", "degrees"],
 
           ["you", "your","yourself", "mario", "mazza", "marios","gaston","gastons", "alex", "him", "his", "he"],
 

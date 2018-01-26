@@ -129,6 +129,29 @@ a>div>img:hover{
 height: 22px;
 }
 
+
+#memo1{
+  height: 250px;
+  width: 400px;
+
+  border-right: #999999 10px outset; 
+  border-bottom: #999999 4px outset;
+  border-left: #000000 4px outset; 
+  border-top: #000000 4px outset;
+
+}
+
+
+#memo2{
+  height: 250px;
+  width: 400px;
+
+  border-right: #999999 10px outset; 
+  border-bottom: #999999 4px outset;
+  border-left: #000000 4px outset; 
+  border-top: #000000 4px outset;
+}
+
 .contact{
   display: flex;
   margin-left: 30px;
@@ -162,8 +185,30 @@ h4{
 #myPic{
   width:200px;
   height:200px;
-  border:1px solid blue;
-  border-radius:50%;
+
+  border-right: #999999 10px outset; 
+  border-bottom: #999999 4px outset;
+  border-left: #000000 4px outset; 
+  border-top: #000000 4px outset;
+}
+
+#pay1,#pay2,#pay3{
+  height: 250px;
+  width: 400px;
+
+  border-right: #999999 10px outset; 
+  border-bottom: #999999 4px outset;
+  border-left: #000000 4px outset; 
+  border-top: #000000 4px outset;
+}
+#pay4{
+  height: 250px;
+  width: 195px;
+
+  border-right: #999999 10px outset; 
+  border-bottom: #999999 4px outset;
+  border-left: #000000 4px outset; 
+  border-top: #000000 4px outset;
 }
 
   /* SPEECH CSS */
