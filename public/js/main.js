@@ -50,7 +50,9 @@ window.addEventListener('scroll', stickyNavigation);
       ["are you smart","how smart are you","you smart"],
       ["do you have the time","do you know the time", "what time is it","can you tell me the time"],
       ["funny","you are smart","youre smart","you smart","you are cool","youre cool","you cool","you are the best","youre the best","you the best","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"],
-      ["how can i get in touch with mario","how can i get in touch with gaston"]
+      ["how can i get in touch with mario","how can i get in touch with gaston"],
+      ["what do you know about gaston"]
+
   ];
 
 
@@ -77,15 +79,16 @@ window.addEventListener('scroll', stickyNavigation);
       ["I'd like to think so!","My Mom says so :)","Well my state of the art AI's has no comparison :)","Very Very much!"],
       [`here: ${getMeTheTime()} `],
       ["Thanks I try really hard!","Wow Thanks!","You too!","I knew I chose the right profession","I know","Thank you","We make a good team"],
-      [`<h4>Hi, my email: gaston.mazza1@gmail.com<br>
-               phone: 801 448 7820 </h4>`]
+      [`<h4>Hi, my email: gaston.mazza1@gmail.com <br> phone: 801 448 7820 </h4>`],
+      ["Alot more than you think! Mainly things related to his resume, you can try saying 'I need Gaston's list of skills"]
   ];
 
+
+// JUST A FUNC TO GET THE CURRENT TIME
   function getMeTheTime(){
    const d = new Date();
    let h = d.getHours(); 
    let m = d.getMinutes(); 
-//    let s =  d.getSeconds(); 
     return h+": "+m;
   }
 
@@ -262,7 +265,7 @@ a value to each word
 
 
 // i have to change to const 
-const  allAnswers ={
+var  allAnswers ={
         skills:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
         skill:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
 
@@ -278,6 +281,11 @@ const  allAnswers ={
                      the 'Big picture' of programming. `,
 
         mario:     `Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
+                     He started his college education majoring in Computer Engineering which led him to take some 
+                     classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
+                     the 'Big picture' of programming. `,
+                     
+         gaston:     `Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
                      He started his college education majoring in Computer Engineering which led him to take some 
                      classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
                      the 'Big picture' of programming. `,
@@ -434,7 +442,7 @@ const  allAnswers ={
 
           ["resume","work","hobby","creator","made","maker","hobbies","interests","interest","phone","email", "technologies","technology","attribute","language","project","projects","languages", "name", "background", "picture", "pics", "pictures","references","reference", "pic", "job", "jobs", "skills","skill","contact" ,"contact information", "schooling", "education", "school","experiences","framework","frameworks","libraries","library","certificates","certificate","degree", "degrees"],
 
-          ["you", "your","yourself", "mario", "mazza", "marios","gaston","gastons", "alex", "him", "his", "he"],
+          ["you", "your","yourself", "mazza","mario", "marios","gaston","gastons", "alex", "him", "his", "he"],
 
           ["java", "javascript", "python", "html", "html5", "css", "css3", "nodejs", "reactjs", "react", "language"],
 
@@ -492,11 +500,8 @@ const  allAnswers ={
   list of question NOT YET SOLVE 
   what are you most proficient at ? -- this is are  AM AM 
   what technology are you most proficient at ? -- AM AM 
-  ok tell me more about mario.
+  what is your best set of skills ? - Q AM O
   */
-
-
-// }, false);
 
 
 
@@ -506,7 +511,7 @@ var r = document.getElementById("result");
 function startConverting () {
   if('webkitSpeechRecognition' in window){
       var speechRecognizer = new webkitSpeechRecognition();
-      speechRecognizer.continuous = false;
+      speechRecognizer.continuous = true;
       speechRecognizer.interimResults = true;
       speechRecognizer.lang = 'en-US';
       speechRecognizer.start();
@@ -531,7 +536,6 @@ function startConverting () {
               }
           }
           r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
-        //   output(finalTranscripts);
       };
       speechRecognizer.onerror = function (event) {
       };
@@ -539,4 +543,3 @@ function startConverting () {
       r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
   }
 }
-
