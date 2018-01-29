@@ -269,7 +269,8 @@ var  allAnswers ={
         language: ["Javascript", "Java"],
 
         javascript:` I feel pretty confortable working with Javascript. I can handle server-side and client-side Javascript.`,
-        java:`I the first progamming laguage I learned but I have not been use it as much. I have pretty good understanding of it. `,
+        java:`Java is the first programming laguage I learned. I have recently fished a HackerRank 30 Days of Code Challenge in Java, 
+        it goes from a simple "Hello World" to testing and running time and complexity. I have a pretty good understanding of it. `,
 
         background: ` Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
                      He started his college education majoring in Computer Engineering which led him to take some 
