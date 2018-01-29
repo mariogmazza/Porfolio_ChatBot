@@ -189,11 +189,11 @@ a value to each word
               (inputArr.includes("A") && inputArr.includes("O")) || inputArr.includes("S")) {
 
               if (inputArr.includes("S") && inputArr.includes("AM")) {
-                  return `Well my ${ getKeyByValue(theObj,"AM") } in the following subject ${getKeyByValue(theObj,"S")} is (should go an amount specific to the S value)`;
+                  return `Well my ${ getKeyByValue(theObj,"AM") } in the following subject ${getKeyByValue(theObj,"S")} is the following:${allAnswers[getKeyByValue(theObj,"S")]} `;
               }
 
               if (inputArr.includes("AM") && inputArr.includes("O")) {
-                  return `My ${getKeyByValue(theObj,"AM")} in ${getKeyByValue(theObj,"O")} is best describe as Awsome!`;
+                  return `My ${getKeyByValue(theObj,"AM")} in ${getKeyByValue(theObj,"O")} is the following ${allAnswers[getKeyByValue(theObj,"O")]}`;
               };
 
             // returns start Q has A and O and N || Q A O || just S 
@@ -268,7 +268,10 @@ var  allAnswers ={
         languages: ["Javascript", "Java"],
         language: ["Javascript", "Java"],
 
-        background: `Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
+        javascript:` I feel pretty confortable working with Javascript. I can handle server-side and client-side Javascript.`,
+        java:`I the first progamming laguage I learned but I have not been use it as much. I have pretty good understanding of it. `,
+
+        background: ` Although mostly self-thought He has always had a curious mind trying to understand how things work in detail, 
                      He started his college education majoring in Computer Engineering which led him to take some 
                      classes in Linear Algebra, Calculus, Java, Discrete Mathematic and some others that helps him get 
                      the 'Big picture' of programming. `,
@@ -393,16 +396,17 @@ var  allAnswers ={
         certificate: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
         certicicates: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
 
-        work: `
-       <h4> Wells Fargo Bank, Lititz, PA			<span>     </span>October 2014 - August 2017<br>
-         Personal Banker
-         Expanded customer relationships by maintaining a regular follow-up process and building rapport with each customer.
+        work: 
+      `<h4> Wells Fargo Bank, Lititz, PA  October 2014 - August 2017 </h4> <br>
+       <h4> Personal Banker </h4>
+       <h4> Expanded customer relationships by maintaining a regular follow-up process and building rapport with each customer.
          Worked closely with management to strategize sales techniques to increase branch production and customer service satisfaction.
-         Goal-driven position. <br>
-
-        CompSolutions, Salt Lake City, UT			<span>     </span>May 2008 - July 2014<br>
-         Help Desk / Field Technician 
-         Skilled problem-solver able to communicate with users at all levels of technical proficiency. Troubleshoot, resolve and document user help requests for desktop, laptop, mobile, network and peripheral problems.
+         Goal-driven position.</h4>
+        <br>
+        <br>
+      <h4> CompSolutions, Salt Lake City, UT May 2008 - July 2014 </h4> <br>
+      <h4> Help Desk / Field Technician </h4>
+      <h4> Skilled problem-solver able to communicate with users at all levels of technical proficiency. Troubleshoot, resolve and document user help requests for desktop, laptop, mobile, network and peripheral problems.
          Maintain and support systems, workstations, mobile devices, printers and peripherals; respond to user service requests; and resolve trouble tickets. </h4> `,
 
         frameworks: "<h4> React.js, jQuery, Express.js, Node.js, Mongoose.js, Passport.js</h4>",
