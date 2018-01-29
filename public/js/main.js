@@ -284,7 +284,7 @@ var  allAnswers ={
                      the 'Big picture' of programming. `,
 
         contact:    "Phone number: 801-448-7820<br> Email address: gaston.mazza1@gmail.com",
-        resume: "<a href='../img/Gaston_Mazza_Resume.pdf' target='_blank'>click here</a>" ,
+        resume: "<a href='../img/Gaston_Mazza_resume_2018.pdf' target='_blank'>click here</a>" ,
 
         technologies:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
         technology:["React", "Javascript", "ES6", "Express", "MongoDB", "Git", "Java", "jQuery", "SQL", "Responsive design", "Bootstap", "HTML5", "CSS3"],
