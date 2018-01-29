@@ -1,3 +1,4 @@
+// CODE FOR STICKY NAV BAR
 
 const nav = document.querySelector('#navigation');
 const navTop = nav.offsetTop;
@@ -19,11 +20,10 @@ function stickyNavigation() {
 
 window.addEventListener('scroll', stickyNavigation);
 
-
+/* **************************************************** */
 
 
 // THIS IS MY BASIC CHATBOT 
-
 
 
 
@@ -108,8 +108,6 @@ window.addEventListener('scroll', stickyNavigation);
 
 
 
-
-
   function output(input) {
       try {
           var product = input + "=" + eval(input); // if its an numerical computation. 
@@ -129,7 +127,6 @@ window.addEventListener('scroll', stickyNavigation);
       }
       document.getElementById("chatbot").innerHTML = product;
       speak(product);
-    //   $('#myModal').modal('toggle');
 
     //   document.getElementById("input").innerHTML = ""; //clear input value
   }
@@ -172,10 +169,6 @@ a value to each word
 
       return analysisArr(myObj, splitQuetion.length);
   }
-
-
-
-
 
 
 
@@ -346,10 +339,7 @@ var  allAnswers ={
         <h4>Donor view</h4>
         <img src='../img/dashboard_donor.png' id='pay3'>"
         <h4>Mobile view</h4>
-        <img src='../img/mobile_view.png' id='pay4'>"
-           `
-        ,
-
+        <img src='../img/mobile_view.png' id='pay4'>" `,
 
         project:   
         `<h4>
