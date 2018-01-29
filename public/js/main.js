@@ -197,7 +197,7 @@ a value to each word
               };
 
             // returns start Q has A and O and N || Q A O || just S 
-              return `Here is what you've asked ! ${allAnswers[getKeyByValue(theObj, "O")] }`;
+              return `Here is what you've asked ! ${allAnswers[getKeyByValue(theObj, "O")] ? allAnswers[getKeyByValue(theObj, "O")] : allAnswers[getKeyByValue(theObj, "S")]} `;
           }
 
     /* **************************************************** */
