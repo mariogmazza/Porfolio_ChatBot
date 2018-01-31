@@ -39,9 +39,9 @@ window.addEventListener('scroll', stickyNavigation);
       ["happy", "good","im happy","im good","i am happy","i am good"],
       ["bad", "bored", "im sad","tired","im bored", "i am bored","you are boring"],
       ["help me", "tell me story", "tell me joke","can you help me"],
-      ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
+      ["ah","wow", "yes", "ok", "okay", "nice", "thanks", "thank you"],
       ["bye", "good bye", "goodbye", "see you later", "later"],
-      ["you suck", "you stupid", "youre stupid", "stupid machine", "you dumb", "youre dumb"],
+      ["you suck","u suck" ,"you stupid", "youre stupid", "stupid machine", "you dumb", "youre dumb"],
       ["tell me about you","tell me more about you", "tell me more about yourself","tell me about yourself"],
       ["what type of music do you like","what kind of music do you like","what is your favorite music"],
       ["what can you do","tell me what you can do","tell me what can you do","command","commands", "what do you do","what can you do for me", "what is your purpose","what else do you do" ,"what else can you do","now what"],
@@ -49,7 +49,7 @@ window.addEventListener('scroll', stickyNavigation);
       ["what do you like to do", "what do you like","what is your favorite pastime", "what is your favorite thing to do", "what is your favorite passtime"],
       ["are you smart","how smart are you","you smart"],
       ["do you have the time","do you know the time", "what time is it","can you tell me the time"],
-      ["funny","you are smart","youre smart","you smart","you are cool","youre cool","you cool","you are the best","youre the best","you the best","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"],
+      ["funny","you are smart","you are the best","u the best","youre smart","you smart","you are cool","youre cool","you cool","you are the best","youre the best","you the best","you funny","you are funny","youre funny", "you ok","youre ok","youre awsome","you are awsome"],
       ["how can i get in touch with mario","how can i get in touch with gaston"],
       ["what do you know about gaston"]
 
