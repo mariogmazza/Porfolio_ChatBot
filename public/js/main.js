@@ -506,7 +506,7 @@ var r = document.getElementById("result");
 function startConverting () {
   if('webkitSpeechRecognition' in window){
       var speechRecognizer = new webkitSpeechRecognition();
-      speechRecognizer.continuous = true;
+      speechRecognizer.continuous = false;
       speechRecognizer.interimResults = true;
       speechRecognizer.lang = 'en-US';
       speechRecognizer.start();
