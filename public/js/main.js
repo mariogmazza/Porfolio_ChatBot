@@ -22,7 +22,6 @@ window.addEventListener('scroll', stickyNavigation);
 
 /* **************************************************** */
 
-
 // THIS IS MY BASIC CHATBOT 
 
 
