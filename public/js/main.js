@@ -395,7 +395,7 @@ var  allAnswers ={
         degrees: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
 
         certificate: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
-        certicicates: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
+        certificates: "<h4>UCF Certificate Full Stack Web Developer <br>CompTia A+ </h4>",
 
         work: 
       `<h4> Wells Fargo Bank, Lititz, PA  October 2014 - August 2017 </h4> <br>
