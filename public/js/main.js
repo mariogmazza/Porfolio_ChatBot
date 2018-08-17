@@ -24,8 +24,6 @@ window.addEventListener('scroll', stickyNavigation);
 
 // THIS IS MY BASIC CHATBOT 
 
-
-
   var trigger = [
       ["hi", "hey", "hello", "aloha", "yo", "sup", "sup bro", "hey there", "what is up"],
       ["how are you", "how is life", "how are things","hows life"],
